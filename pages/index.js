@@ -1,8 +1,6 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import Navbar from '../src/components/Navbar'
 import React from 'react'
+import { MicroBlog } from '../src/components/BlogCard/MicroBlog'
 
 export default function Home() {
 
@@ -15,7 +13,7 @@ export default function Home() {
     <div className={`App ${mode?"":"dark"}`}>
       <Navbar togglemode={toggleMode} mode={mode} />
       <div className="bodyContainer">
-        
+        <MicroBlog mode={mode} />
       </div>
     </div>
   )

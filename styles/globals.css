@@ -6,7 +6,7 @@
 }
 
 
-
+/* nav bar */
 .navContainer{
   width: 5vw;
   background-color: rgb(255, 255, 255);
@@ -33,11 +33,141 @@
   width: 30px;
   cursor: pointer;
 }
+/* nav bar */
 
 .bodyContainer{
-  width: 95vw;
+  padding: 15px 18px;
+  width: 90vw;
   min-height: 100vh;
 }
+
+/*  */
+
+/* MicroBlog */
+
+.content-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 35vh;
+}
+.microarticle>*{
+  margin: 8px 0px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+.container .page-heading-container {
+  display: none;
+}
+
+.container.Micro {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+
+.MicroBlog {
+  margin-top: 15px;
+  background-color: white;
+  width: 65vw;
+  padding: 10px 25px;
+  padding-bottom: 35px;
+  border-bottom: 0.5px solid rgb(80, 80, 80);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+
+.MicroBlog-top {
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  margin-top: 25px;
+  padding: 0;
+}
+.BlogContainer {
+  background: white;
+}
+.MicroBlog:hover,
+.BlogContainer:hover {
+  filter: drop-shadow(0px 2px 5px rgba(128, 128, 128, 0.185));
+}
+
+.tags {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.Name,
+.Date,
+.tagContent {
+  font-family: "Roboto Mono", "Inter", "Poppins", "IBM Plex Sans Thai looped",
+    sans-serif;
+  margin: 0;
+  padding: 0;
+  margin-right: 15px;
+  font-weight: 400px;
+  color: rgb(50, 50, 50);
+}
+.MicroBlog-title,
+.BlogContainer h3 {
+  color: rgb(255, 9, 103);
+  text-transform: capitalize;
+}
+.tagContent {
+  background-color: rgb(226, 231, 231);
+  padding: 6px 8px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-family: "Roboto Mono", "Inter", "Poppins", "Lora";
+}
+.Date {
+  font-family: "Roboto Mono", "Inter";
+  font-weight: 200px;
+}
+
+.MicroBlog img {
+  padding: 20px;
+  margin: 20px;
+  max-width: 300px;
+}
+.likes {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 18px;
+}
+
+.likes img {
+  width: 25px;
+  padding: 8px;
+  margin: 0;
+  padding-left: 0;
+}
+
+.Loading {
+  font-family: "Roboto Mono", "Inter", "Poppins", "Lora";
+  font-weight: 200;
+}
+
+article {
+  text-align: justify;
+}
+
+/* MicroBlog */
+
 
 @media screen and (min-width: 721px){
   .bodyContainer{
@@ -70,16 +200,51 @@
   .navContainer.dark{
     filter: drop-shadow(-3px 0px 5px rgba(10, 10, 10));
   }
+
+  .MicroBlog{
+    flex-direction:column ;
+  }
 }
 
 /* dark mode */
 .dark {
-  background: rgb(27, 27, 27);
+  background: rgb(18, 18, 18);
   color: white;
 }
 .navContainer.dark{
-  filter: drop-shadow(0px 3px 5px rgba(10, 10, 10));
+  filter: drop-shadow(0px 3px 8px rgba(1, 1, 1));
   border: none;
+  background: rgb(27, 27, 27);
+}
+.cardContainer.dark{
+  background-color: rgb(27, 27, 27);
+  font-family: "Roboto Mono", "Inter", "Poppins", "IBM Plex Sans Thai looped";
+  margin-right: 15px;
+  font-weight: 400px;
+  color: rgb(214, 214, 214);
+}
+.MicroBlog.dark{
+  background-color: rgb(27, 27, 27);
+}
+.MicroBlog.dark .tagContent{
+  font-family: "Roboto Mono", "Inter", "Poppins", "IBM Plex Sans Thai looped";
+  margin-right: 15px;
+  font-weight: 400px;
+}
+.dark .Name,
+.dark .Date {
+  font-family: "Roboto Mono", "Inter", "Poppins", "IBM Plex Sans Thai looped";
+  margin: 0;
+  padding: 0;
+  margin-right: 15px;
+  font-weight: 400px;
+  color: rgb(214, 214, 214);
+}
+.MicroBlog.dark:hover,
+.BlogContainer.dark:hover,
+.Form-con.dark .Form,
+.DashBoard.dark {
+  filter: drop-shadow(0px -2px 8px rgb(8, 8, 8));
 }
 
 @media screen and (max-width: 720px) {
