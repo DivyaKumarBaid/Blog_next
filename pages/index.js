@@ -1,19 +1,18 @@
 import Navbar from '../src/components/Navbar'
 import React from 'react'
 import { MicroBlog } from '../src/components/BlogCard/MicroBlog'
+import { useThemeToggle, useThemeValue } from '../src/utils/Theme';
 
 export default function Home() {
 
-  const [mode, setMode] = React.useState(false) //true for light false for dark
-  function toggleMode() {
-    setMode(!mode)
-  }
+  const theme = useThemeValue(); // use the providers value of the useThemeValue custom hook
+
 
   return (
-    <div className={`App ${mode?"":"dark"}`}>
-      <Navbar togglemode={toggleMode} mode={mode} />
+    <div className={`App ${theme ? "" : "dark"}`}>
+      <Navbar />
       <div className="bodyContainer">
-        <MicroBlog mode={mode} />
+        <MicroBlog />
       </div>
     </div>
   )

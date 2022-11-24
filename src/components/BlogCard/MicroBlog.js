@@ -5,15 +5,18 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import React from 'react'
 import { AiFillHeart } from 'react-icons/ai'
+import { useThemeValue } from '../../utils/Theme'
 
 
-export function MicroBlog(props) {
+
+export function MicroBlog() {
+
+  const theme = useThemeValue(); // use the providers value of the useThemeValue custom hook
+
 
   const [data, setData] = React.useState([])
   const [isPending, setPending] = React.useState(true)
   const [error, setError] = React.useState(null)
-
-  console.log(data)
 
   React.useEffect(() => {
     fetch(`https://devblogs2022.herokuapp.com/blog/?limit=10`)
@@ -36,7 +39,7 @@ export function MicroBlog(props) {
       })
   }, [])
 
-  const mode = props.mode ? "" : "dark"
+  const mode = theme ? "" : "dark"
 
   const error_div = error && <h2 className="Loading">{error}</h2>
   const loading_div = isPending && <h2 className="Loading">Loading...</h2>
@@ -86,7 +89,7 @@ function micro(data, mode) {
   )
 }
 
-const Md = ({ text }) => {
+export const Md = ({ text }) => {
   return (
     <ReactMarkdown
       // eslint-disable-next-line react/no-children-prop
@@ -115,18 +118,3 @@ const Md = ({ text }) => {
   )
 }
 
-/* <div className={`MicroBlog  ${mode}`}>
-<div className="content-container">
-
-    <div className="microarticle">
-        <h2 className='MicroBlog-title'>{data.title}</h2>
-        <div className="microcontent">
-            <article className='mircroarticle-body'>
-                {<Md text={ header[0]} />}
-            </article>
-        </div>
-    </div>
-
-</div>
-<img src={data.image} alt="img" />
-</div> */

@@ -103,6 +103,7 @@
 }
 
 .MicroBlog {
+  filter: drop-shadow(0px 2px 5px rgba(128, 128, 128, 0.285));
   margin-top: 15px;
   background-color: white;
   width: 65vw;
@@ -130,7 +131,7 @@
 }
 .MicroBlog:hover,
 .BlogContainer:hover {
-  filter: drop-shadow(0px 2px 5px rgba(128, 128, 128, 0.185));
+  filter: drop-shadow(0px 2px 5px rgba(128, 128, 128, 0.485));
 }
 
 .tags {
@@ -254,6 +255,7 @@ article {
   color: rgb(214, 214, 214);
 }
 .MicroBlog.dark{
+  filter: drop-shadow(0px -2px 8px rgb(8, 8, 8,0.5));
   background-color: rgb(27, 27, 27);
 }
 .MicroBlog.dark .tagContent{
