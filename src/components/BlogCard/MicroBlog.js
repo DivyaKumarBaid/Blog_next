@@ -9,7 +9,7 @@ import { AiFillHeart} from 'react-icons/ai'
 
 export function MicroBlog(props) {
 
-    const { data, isPending, error } = useFetch("https://devblogs2022.herokuapp.com/blog/?limit=10")
+    const { data, isPending, error } = useFetch(`${process.env.REACT_APP_BASE_URL}/blog/?limit=10`)
   
     const mode = props.mode ? "" : "dark"
  
