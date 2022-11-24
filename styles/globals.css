@@ -35,6 +35,12 @@
 
 }
 
+.App{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+}
 
 /* nav bar */
 .navContainer{
@@ -150,7 +156,8 @@
   padding: 0;
   margin-right: 15px;
   font-weight: 400px;
-  color: rgb(50, 50, 50);
+  color: rgb(74, 74, 74);
+  opacity: 0.85;
 }
 .MicroBlog-title,
 .BlogContainer h3 {
@@ -199,11 +206,94 @@ article {
 
 /* MicroBlog */
 
+/* blog */
+
+.BlogContainer {
+  margin-top: 10px;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 75vw;
+  max-width: 85%;
+  border-radius: 10px;
+}
+.BlogContainer .coverimg {
+  margin: 15px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 25vh;
+  border-radius: 20px;
+}
+.BlogContent {
+  padding: 10px;
+  margin-left: 12px;
+  width: 100%;
+}
+.Blogheader .Blog-des {
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  margin: 15px 0px;
+}
+.Blogheader .Blog-des .Name,
+.Blogheader .Blog-des .Date {
+  font-family: "Poppins", "Lora", "Josefin Sans", sans-serif;
+  font-size: 20px;
+}
+.Blogheader .Blog-des .Date {
+  font-size: 15px;
+  color: rgb(44, 44, 44);
+}
+
+.BlogContainer article {
+  white-space: "pre-line";
+  font-family: "Roboto Mono", "Inter", "Poppins", "Lora";
+  font-size: 18px;
+  line-height: 32px;
+  text-align: left;
+}
+
+.Blogheader h3 {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  font-size: 30px;
+  padding: 0;
+  margin: 15px 0px;
+}
+
+/* blog */
+
 
 @media screen and (min-width: 721px){
   .bodyContainer{
     margin-left: 5vw;
   }
+  
+  .BlogContainer {
+    margin: 30px 0px;
+    margin-left: 50px;
+    max-width: 60%;
+    padding: 25px 25px;
+    border-radius: 10px;
+  }
+  .BlogContainer .coverimg {
+    border-radius: 10px;
+    margin: 0;
+    height: 60vh;
+    background-size: auto;
+  }
+
+  .Blogheader h3 {
+    font-size: 40px;
+  }
+
 }
 
 @media screen and (max-width: 720px) {
@@ -272,13 +362,18 @@ article {
   font-weight: 400px;
   color: rgb(214, 214, 214);
 }
+/* .BlogContainer.dark{
+  background: var(--var-card-dark);
+} */
 .MicroBlog.dark:hover,
 .BlogContainer.dark:hover,
 .Form-con.dark .Form,
 .DashBoard.dark {
   filter: drop-shadow(0px -2px 8px rgb(8, 8, 8));
 }
-
+.Blogheader .Blog-des .Date {
+  color: rgb(200, 200, 200);
+}
 @media screen and (max-width: 720px) {
   .navContainer.dark{
     filter: drop-shadow(-3px 0px 5px rgba(10, 10, 10));

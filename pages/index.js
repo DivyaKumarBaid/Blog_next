@@ -10,7 +10,6 @@ export default function Home() {
 
   return (
     <div className={`App ${theme ? "" : "dark"}`}>
-      <Navbar />
       <div className="bodyContainer">
         <MicroBlog />
       </div>
