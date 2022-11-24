@@ -379,6 +379,7 @@ article {
 
   .MicroBlog{
     flex-direction:column ;
+    width: 75vw;
   }
 }
 
