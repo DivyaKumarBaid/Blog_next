@@ -5,6 +5,36 @@
   padding: 0;
 }
 
+:root{
+  --var-primary:rgb(255, 9, 103);
+  --var-card-dark:rgb(27,27,27);
+  --var-dark-back:rgb(8,8,8);
+}
+
+/* scroll bar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(26, 26, 26);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 9, 103);
+  border-radius:8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+
+}
+
 
 /* nav bar */
 .navContainer{
