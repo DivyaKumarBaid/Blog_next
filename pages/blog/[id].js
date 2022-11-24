@@ -33,9 +33,9 @@ const Blog = (props) => {
 
 function blog_con(data, mode) {
     const bodySplit = data.body.split('<br>')
-    const bodytry = bodySplit.map((line) => {
+    const bodytry = bodySplit.map((line, idx) => {
         return (
-            <p>{<Md text={line} />}</p>
+            <p key={idx}>{<Md text={line} />}</p>
         )
     })
 
