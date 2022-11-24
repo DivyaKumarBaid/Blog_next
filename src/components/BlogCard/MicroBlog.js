@@ -3,13 +3,36 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark as dark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import useFetch from '../../utils/useFetch'
+import React from 'react'
 import { AiFillHeart} from 'react-icons/ai'
 
 
 export function MicroBlog(props) {
 
-    const { data, isPending, error } = useFetch(`https://devblogs2022.herokuapp.com/blog/?limit=10`)
+  const [data, setData] = React.useState([])
+  const [isPending, setPending] = React.useState(true)
+  const [error, setError] = React.useState(null)
+
+  React.useEffect(() => { 
+    fetch(`https://devblogs2022.herokuapp.com/blog/?limit=10`)
+      .then(res => {
+          if (!res === 200 || !res === 201) {
+              throw Error('Could not fetch the data form the servre');
+          }
+          return res.json();
+      })
+      .then(data => {
+          setData(data);
+          setPending(false);
+          setError(null);
+      })
+      .catch(err => {
+          if (err.name !== 'AbortError') {
+              setPending(false);
+              setError(err.message);
+          }
+      })
+  },[])
   
     const mode = props.mode ? "" : "dark"
  
