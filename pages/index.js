@@ -1,7 +1,7 @@
-import Navbar from '../src/components/Navbar'
 import React from 'react'
 import { MicroBlog } from '../src/components/BlogCard/MicroBlog'
-import { useThemeToggle, useThemeValue } from '../src/utils/Theme';
+import { Hero } from '../src/components/Hero/Hero';
+import { useThemeValue } from '../src/utils/Theme';
 
 export default function Home() {
 
@@ -11,6 +11,7 @@ export default function Home() {
   return (
     <div className={`App ${theme ? "" : "dark"}`}>
       <div className="bodyContainer">
+        <Hero />
         <MicroBlog />
       </div>
     </div>
